@@ -6,3 +6,14 @@
 //
 
 import Foundation
+import RxSwift
+import RxCocoa
+
+extension HomeVC {
+    internal func initializeSubscribers() {
+        viewModel.worksData
+        .subscribe(onNext: { modelArray in
+            self.tableView.reloadData()
+        }).disposed(by: disposeBag)
+    }
+}

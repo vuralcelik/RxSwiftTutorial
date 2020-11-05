@@ -6,24 +6,21 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
 class DetailVC: UIViewController {
 
+    @IBOutlet weak var textView: UITextView!
+    @IBOutlet weak var addButton: UIButton!
+    
+    var disposeBag = DisposeBag()
+    var publisher = PublishSubject<WorkModel>()
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        initializeEvents()
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
